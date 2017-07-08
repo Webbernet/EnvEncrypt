@@ -1,4 +1,5 @@
 require_relative 'decryptor'
+require_relative 'config_map'
 
 class ConfigKeyStore
   attr_reader :config_name
@@ -28,7 +29,7 @@ class ConfigKeyStore
   end
 
   def fetch_environment_keys(config_name, map)
-    ConfigMap.new(config_name).fetch
+    ConfigMap.new(config_name, map).fetch
   end
 
   def decrypt(data)
