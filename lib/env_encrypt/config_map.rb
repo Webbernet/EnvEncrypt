@@ -1,3 +1,5 @@
+require_relative 'environment_variable_fetcher'
+
 class ConfigMap
 
   def initialize(key_name, map)
@@ -31,6 +33,6 @@ class ConfigMap
   end
 
   def env_variable(name)
-    Config::EnvironmentVariableFetcher.fetch(name)
+    EnvironmentVariableFetcher.fetch(name)
   end
 end
