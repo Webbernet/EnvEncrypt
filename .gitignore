@@ -1,0 +1,19 @@
+/.bundle
+
+tags
+
+coverage
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+.DS_Store
+
+*.swp
+
+examples.txt
+.projectile
+.#*
