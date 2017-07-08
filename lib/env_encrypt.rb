@@ -9,6 +9,6 @@ class EnvEncrypt
   end
 
   def fetch(key)
-    ConfigKeyStore.new(key, @map, @key_name, @bucket)
+    ConfigKeyStore.new(key, @map, @key_name, @bucket).fetch
   end
 end
