@@ -1,5 +1,6 @@
 require_relative 'decryptor'
 require_relative 'config_map'
+require_relative 'encryption_key_fetcher'
 
 class ConfigKeyStore
   attr_reader :config_name

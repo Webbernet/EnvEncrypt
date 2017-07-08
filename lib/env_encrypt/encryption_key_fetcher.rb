@@ -1,4 +1,5 @@
 require 'json'
+require_relative 'file_retriever_service'
 
 class EncryptionKeyFetcher
   def initialize(key, bucket)

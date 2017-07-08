@@ -1,3 +1,5 @@
+require 'aws-sdk'
+
 class FileRetrieverService
   attr_reader :key, :bucket
 
