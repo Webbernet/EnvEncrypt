@@ -1,41 +1,31 @@
 # EnvEncrypt
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/env_encrypt`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+EnvEncrypt is an internal tool that we use to pass environment variables to our Ruby projects. We can pass in sensitive variables that are encrypted using a set of keys from S3.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+### Rails
+
+Add it to your gemfile.
 
 ```ruby
 gem 'env_encrypt'
 ```
 
-And then execute:
+## Usage in Rails
 
-    $ bundle
+In `application.rb` of your rails project, you can call the EnvEncrypt service and pass the environment map.
 
-Or install it yourself as:
+```ruby
+# all of the environment variables you want to use
+MAP = [
+  { name: 'database_key', key: 'ENVIRONMENT_VARIABLE_THE_KEY_IS_IN' }
+]
 
-    $ gem install env_encrypt
+# init the service, passing the bucket and key of the decryption keys in S3
+encrypted_store = EnvEncrypt.new(MAP, 'bucket-of-key', 'keyname')
 
-## Usage
+# and then we can add it to Rails configuration state so our code can access it
+config.database_key = encrypted_store.fetch('database_host')
 
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/env_encrypt.
-
-
-## License
-
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
+```
