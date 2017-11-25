@@ -7,7 +7,7 @@ RSpec.describe EncryptionKeyFetcher do
   subject { described_class.new(key, bucket).retrieve }
 
   before do
-    allow(FileRetrieverService).to receive(:new)
+    allow(S3FileService).to receive(:new)
       .and_return(double(body: encryption_json))
   end
 
@@ -16,7 +16,7 @@ RSpec.describe EncryptionKeyFetcher do
   end
 
   it "calls the file retriever service correctly" do
-    expect(FileRetrieverService).to receive(:new)
+    expect(S3FileService).to receive(:new)
                                       .with(key, bucket)
     subject
     

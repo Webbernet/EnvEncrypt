@@ -1,6 +1,6 @@
 require 'aws-sdk'
 
-class FileRetrieverService
+class S3FileService
   attr_reader :key, :bucket
 
   def initialize(key, bucket)

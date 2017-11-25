@@ -2,7 +2,7 @@ require "bundler/setup"
 require_relative "../lib/env_encrypt"
 require_relative "../lib/env_encrypt/config_map"
 require_relative "../lib/env_encrypt/encryption_key_fetcher"
-require_relative "../lib/env_encrypt/file_retriever_service"
+require_relative "../lib/env_encrypt/s3_file_service"
 require_relative "../lib/env_encrypt/decryptor"
 
 RSpec.configure do |config|

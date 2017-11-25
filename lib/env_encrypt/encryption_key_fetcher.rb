@@ -1,5 +1,5 @@
 require 'json'
-require_relative 'file_retriever_service'
+require_relative 's3_file_service'
 
 class EncryptionKeyFetcher
   def initialize(key, bucket)
@@ -16,6 +16,6 @@ class EncryptionKeyFetcher
   end
 
   def raw_file
-    FileRetrieverService.new(@key, @bucket).body
+    S3FileService.new(@key, @bucket).body
   end
 end
