@@ -1,4 +1,4 @@
-require 'aws-sdk'
+require 'aws-sdk-s3'
 
 class S3FileService
   attr_reader :key, :bucket
