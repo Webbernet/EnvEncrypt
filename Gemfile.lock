@@ -17,7 +17,7 @@ GEM
     aws-sigv4 (1.0.0)
     diff-lcs (1.3)
     jmespath (1.3.1)
-    rake (10.5.0)
+    rake (13.0.1)
     rspec (3.6.0)
       rspec-core (~> 3.6.0)
       rspec-expectations (~> 3.6.0)
@@ -39,7 +39,7 @@ DEPENDENCIES
   aws-sdk
   bundler (~> 1.14)
   env_encrypt!
-  rake (~> 10.0)
+  rake (~> 13.0)
   rspec
 
 BUNDLED WITH
