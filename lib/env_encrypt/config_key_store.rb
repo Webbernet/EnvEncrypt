@@ -24,7 +24,6 @@ class ConfigKeyStore
     elsif config_map[:plain] != nil
       config_map[:plain]
     else
-      puts "---WARNING--- Missing '#{config_name}' environment variable"
       ''
     end
   end
